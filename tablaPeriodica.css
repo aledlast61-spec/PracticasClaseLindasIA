@@ -1,0 +1,166 @@
+/* ==========================================================
+   tablaPeriodica.css
+   Estilos EXCLUSIVOS de tablaPeriodica.html.
+   Todas las reglas empiezan con una clase propia
+   (.tabla-periodica, .elemento-quimico, etc.), así que no
+   afectan a las demás tablas del proyecto.
+   Se usa junto con estilos.css (que da la base de la página).
+   ========================================================== */
+
+/* La página necesita más ancho que las demás para 18 columnas */
+.pagina-tabla-periodica {
+    max-width: 1400px;
+}
+
+/* ---------- Colores de cada familia química ----------
+   Cada clase solo define la variable --color;
+   la celda y la leyenda la usan como fondo. */
+.metal-alcalino         { --color: #F2C1B6; }
+.metal-alcalinoterreo   { --color: #F1DDA9; }
+.metal-transicion       { --color: #BFD3E6; }
+.metal-postransicional  { --color: #CADCC4; }
+.metaloide              { --color: #DCCFEA; }
+.no-metal               { --color: #E8E1CB; }
+.halogeno               { --color: #A6DAD3; }
+.gas-noble              { --color: #A9B4EA; }
+.lantanido              { --color: #EDC3D6; }
+.actinido               { --color: #D8C3A5; }
+
+/* ---------- Contenedor: permite desplazar la tabla en pantallas pequeñas ---------- */
+.contenedor-tabla {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+/* ---------- La tabla ---------- */
+.tabla-periodica {
+    width: 100%;
+    min-width: 1180px;        /* por debajo de este ancho aparece el desplazamiento */
+    table-layout: fixed;      /* las 19 columnas miden lo mismo */
+    border-collapse: separate;
+    border-spacing: 3px;
+    background-color: transparent;
+    margin: 0 0 0.5rem;
+}
+
+/* La tabla de lantánidos y actínidos tiene 19 columnas del mismo ancho,
+   igual que la principal, así que queda alineada debajo de ella */
+.lantanidos-actinidos {
+    margin-top: 0.25rem;
+}
+
+/* ---------- Celdas en general ---------- */
+.tabla-periodica td {
+    padding: 4px 2px;
+    border: 1px solid var(--azul-claro);
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    color: var(--azul-marino);
+}
+
+/* ---------- Números de grupo y de periodo ---------- */
+.tabla-periodica td.cabecera {
+    background-color: var(--azul-marino);
+    color: var(--marfil);
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-color: var(--azul-marino);
+}
+
+/* ---------- Espacios vacíos (sin elemento) ---------- */
+.tabla-periodica td.espacio-vacio {
+    border: none;
+    background-color: transparent;
+}
+
+/* ---------- Marcador * de lantánidos y actínidos ---------- */
+.tabla-periodica td.marcador-serie {
+    background-color: transparent;
+    border: 1px dashed var(--azul-marino);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ---------- Etiquetas "Lantánidos" y "Actínidos" ---------- */
+.tabla-periodica td.etiqueta-serie {
+    background-color: var(--color);
+    font-weight: bold;
+    border-color: var(--azul-marino);
+}
+
+/* ---------- Cada elemento químico ---------- */
+.tabla-periodica td.elemento-quimico {
+    background-color: var(--color);
+    height: 62px;
+    line-height: 1.15;
+}
+
+.elemento-quimico .numero {
+    display: block;
+    font-size: 0.65rem;
+    text-align: left;
+    padding-left: 3px;
+}
+
+/* El símbolo es lo más destacado */
+.elemento-quimico .simbolo {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.elemento-quimico .nombre {
+    display: block;
+    font-size: 0.6rem;
+    overflow-wrap: anywhere;   /* evita que un nombre largo se salga de la celda */
+}
+
+/* ---------- Elementos que tienen página propia (enlace) ---------- */
+.tabla-periodica td.con-pagina {
+    border: 2px solid var(--azul-marino);
+}
+
+/* El enlace cubre toda la celda para que sea fácil de pulsar */
+.tabla-periodica td.con-pagina a {
+    display: block;
+    margin: -4px -2px;
+    padding: 4px 2px;
+    color: var(--azul-marino);
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.tabla-periodica td.con-pagina:hover,
+.tabla-periodica td.con-pagina:focus-within {
+    background-color: var(--azul-marino);
+}
+
+.tabla-periodica td.con-pagina:hover a,
+.tabla-periodica td.con-pagina a:focus {
+    background-color: transparent;
+    color: var(--marfil);
+}
+
+/* ---------- Leyenda de colores ---------- */
+.leyenda-tabla {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.leyenda-tabla li {
+    background-color: var(--color);
+    color: var(--azul-marino);
+    border: 1px solid var(--azul-marino);
+    padding: 0.2rem 0.75rem;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.nota-tabla {
+    font-size: 0.95rem;
+}

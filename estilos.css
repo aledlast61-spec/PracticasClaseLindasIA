@@ -1,0 +1,206 @@
+/* ==========================================================
+   estilos.css  -  Hoja de estilos general
+   Se usa SOLO en las páginas que no tenían diseño propio.
+   Paleta: azul marino, marfil y azul claro.
+   ========================================================== */
+
+/* ---------- Colores (variables) ---------- */
+:root {
+    --azul-marino: #0B1F3B;   /* títulos, texto destacado, detalles */
+    --marfil: #F4F1EA;        /* fondo general */
+    --azul-claro: #BFD3E6;    /* bordes, fondos secundarios, separadores */
+    --blanco: #FFFFFF;        /* solo para superficies de lectura */
+}
+
+/* ---------- Cuerpo de la página ---------- */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--azul-marino);
+    background-color: var(--marfil);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* ---------- Encabezado, contenido principal y pie ---------- */
+header {
+    background-color: var(--azul-marino);
+    color: var(--marfil);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+main {
+    margin: 1rem 0;
+}
+
+footer {
+    background-color: var(--azul-claro);
+    color: var(--azul-marino);
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ---------- Títulos ---------- */
+h1, h2, h3, h4 {
+    color: var(--azul-marino);
+    line-height: 1.3;
+    margin: 1.5rem 0 0.75rem;
+}
+
+h1 {
+    font-size: 2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid var(--azul-claro);
+}
+
+h2 {
+    font-size: 1.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--azul-claro);
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+/* ---------- Párrafos ---------- */
+p {
+    margin: 0 0 1rem;
+}
+
+/* ---------- Hipervínculos ---------- */
+a {
+    color: var(--azul-marino);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--azul-claro);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+    background-color: var(--azul-claro);
+    text-decoration-color: var(--azul-marino);
+}
+
+/* ---------- Listas ---------- */
+ul, ol {
+    margin: 0 0 1rem;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.25rem;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 0.5rem 1.5rem;
+}
+
+/* ---------- Tablas ---------- */
+table {
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: 1rem 0;
+    background-color: var(--blanco);
+}
+
+th, td {
+    border: 1px solid var(--azul-claro);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--azul-marino);
+    color: var(--marfil);
+}
+
+tr:nth-child(even) td {
+    background-color: var(--marfil);
+}
+
+/* ---------- Imágenes, video y audio ---------- */
+img, video {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid var(--azul-claro);
+}
+
+audio {
+    max-width: 100%;
+}
+
+/* ---------- Formularios ---------- */
+fieldset {
+    border: 2px solid var(--azul-claro);
+    padding: 1rem 1.5rem;
+    background-color: var(--blanco);
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    border: 1px solid var(--azul-marino);
+    padding: 0.3rem;
+    margin: 0.25rem 0 0.75rem;
+    max-width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: var(--azul-marino);
+    color: var(--marfil);
+    border: none;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: var(--azul-claro);
+    color: var(--azul-marino);
+}
+
+/* ---------- Separador ---------- */
+hr {
+    border: none;
+    border-top: 2px solid var(--azul-claro);
+    margin: 2rem 0 1rem;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    th, td {
+        padding: 0.35rem 0.5rem;
+    }
+}
